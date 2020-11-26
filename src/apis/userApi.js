@@ -2,7 +2,7 @@ import { loginApiClient as apiClient } from '../apis/apiClient';
 
 export const login = params =>
     apiClient
-        .post('verifyPassword?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY', {
+        .post('signupNewUser?key=AIzaSyAolVUJjPpRFj9zovG3bntuGiprOEMAt8g', {
             'email': params['email'],
             'password': params['password'],
             returnSecureToken: true

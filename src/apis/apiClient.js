@@ -2,7 +2,7 @@ import axios from 'axios';
 import { HTTP_AUTHORIZATION_HEADER } from '../common';
 import clone from 'lodash/clone';
 import * as auth from '../utils/authHelper';
-const apiClient = axios.create({
+export const loginApiClient = axios.create({
     baseURL: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/',
     timeout: 30000,
     headers: {
@@ -31,7 +31,7 @@ const requestInterceptors = axiosConfig => {
     return config;
 };
 // Add a request interceptor
-apiClient.interceptors.request.use(
+loginApiClient.interceptors.request.use(
     axiosConfig => requestInterceptors(axiosConfig),
     error => {
         Promise.reject(error);

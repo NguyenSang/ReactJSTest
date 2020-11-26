@@ -1,6 +1,6 @@
-import { handleActions, combineActions } from 'redux-actions';
-
+import { handleActions } from 'redux-actions';
 import { login, loginFailed } from '../actions/auth';
+
 
 export const initialState = {
   token: null,
@@ -9,6 +9,7 @@ export const initialState = {
   loading: false
 
 };
+
 const userReducer = handleActions({
   [login]: (state, action) => ({
     ...state,

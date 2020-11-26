@@ -1,17 +1,16 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import * as userApis from '../../apis/userApi';
-import { loginFailed } from '../actions/auth';
-import { get } from 'lodash';
-
 import {
     AUTH_START
 } from '../actions/actionTypes';
+import { loginFailed } from '../actions/auth';
 
-import { login } from '../actions/auth';
+
 
 export function* loginSaga(action) {
     try {
         const response = yield call(userApis.login, action.payload);
+        console.log(response);
     } catch (error) {
         yield put(loginFailed(error));
     }
